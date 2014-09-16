@@ -1,0 +1,42 @@
+<ion-view title="{{item.name}}">
+    <ion-nav-buttons side="left">
+        <a class="button button-icon icon ion-ios7-arrow-back" href="#/app/category/{{item.category_hash}}"></a>
+    </ion-nav-buttons>
+    <ion-nav-buttons side="right">
+        <!--<button class="button" ng-click="openLogin();">登录</button>-->
+    </ion-nav-buttons>
+    <ion-content class="has-header">
+        <div class="mine-item-box">
+            <h4>{{item.name}}</h4>
+            <p class="mine-item-price">{{item.price}}</p>
+            <p class="mine-item-category">所属分类：<a href="#/app/category/{{item.category_hash}}">{{category.name}}</a></p>
+            <div class="mine-item-content">
+                <div class="mine-item-img">
+                    <img src="{{item.main_photo}}" width="120px" alt="{{item.name}}"/>
+                </div>
+                <p>BARSKA是知名的瞄具品牌厂商，旗下的望远镜价格比较亲民。这只CO11502是一款放大倍数在20~60倍的单筒观鸟镜，口径60mm，多层镀膜。100%防水、防雾，适合户外使用。外部采用橡胶材质，减震耐用。配件包含镜头保护盖、三脚架和便携包一个。有网友提到这款提供了拍摄接口，可以对接数码相机。看起来很威武的一个家伙，适合赏鸟观星，不适合寻找移动物体，也别滥用哦。<br><br><a href="http://haitao.smzdm.com/go_ht/294859/0" target="_blank">美国亚马逊</a>目前此款特价至59.18美元，之前一直维持在73美元以上的价格，今天刚降价，发货重量约4磅，使用信用卡通过转运公司来购买折合人民币约500元（小编实测无法直邮中国），具体购买方法可参考此<a href="http://www.smzdm.com/buyglobal.html" target="_blank">海淘攻略</a>。同款国内<a href="http://haitao.smzdm.com/go_ht/294859/2" target="_blank">淘宝</a>有代购报价850元，海淘还是比较有价格优势与保真的。</p><p><img alt="BARSKA CO11502 防水望远镜20-60x60（附三脚架）" src="http://img20.360buyimg.com/vc/g12/M00/07/02/rBEQYFGVydcIAAAAAAEBRcd9qe0AABYSgIo3psAAQFd638.jpg" data-ke-src="http://p.zdmimg.com/201409/14/54158ead88696.png"></p><p><img alt="BARSKA CO11502 防水望远镜20-60x60（附三脚架）" src="http://img20.360buyimg.com/vc/g12/M00/07/02/rBEQYFGVydcIAAAAAAEBRcd9qe0AABYSgIo3psAAQFd638.jpg" data-ke-src="http://p.zdmimg.com/201409/14/54158eb3ade9a.png"></p>
+            </div>
+        </div>
+
+        <ion-list>
+            <ion-item ng-repeat="c in comments">
+                {{c.content}}
+            </ion-item>
+        </ion-list>
+
+        <ion-infinite-scroll
+                ng-if="moreDataCanBeLoaded()"
+                icon="ion-loading-a"
+                on-infinite="loadMore()">
+        </ion-infinite-scroll>
+
+    </ion-content>
+    <ion-footer-bar align-title="left" class="bar-calm clearfix" style="height:auto;">
+
+        <textarea class="item-input-wrapper" placeholder="请输入评论内容" style="word-break: break-all; word-wrap: break-word; overflow-y:hidden; height: auto;  line-height: 30px; max-height: 120px;" rows="1"  onpropertychange="this.style.height=this.scrollHeight + 'px'" oninput="this.style.height=this.scrollHeight + 'px'" id="comment" ng-model="comment"></textarea>
+
+        <button class="button button-clear" ng-click="sendComment();">
+            发送
+        </button>
+    </ion-footer-bar>
+</ion-view>

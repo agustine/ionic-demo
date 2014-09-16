@@ -1,0 +1,32 @@
+.mine-item-box{
+    padding: 10px;
+}
+
+    .mine-item-price{
+        color: #e6312a;
+    }
+
+    .mine-item-category{
+        font-size: 10px;
+        line-height: 20px;
+        color: #999999;
+    }
+
+        .mine-item-content a,
+        .mine-item-category a{
+            color: #5188a6!important;
+            text-decoration: none!important;
+        }
+
+    .mine-item-content{
+        color: #333333;
+    }
+        .mine-item-img{
+            float: right;
+            padding: 0 20px 20px 20px;
+        }
+
+        .mine-item-content img{
+            max-width: 320px;
+            margin: 0 auto;
+        }

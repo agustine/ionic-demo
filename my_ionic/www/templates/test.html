@@ -1,0 +1,32 @@
+<ion-view title="Test">
+
+    <ion-nav-buttons side="left">
+        <button menu-toggle="left" class="button button-icon icon ion-navicon"></button>
+    </ion-nav-buttons>
+    <ion-nav-buttons side="right">
+        <button menu-toggle="left" class="button button-icon icon ion-navicon"></button>
+    </ion-nav-buttons>
+    <ion-footer-bar align-title="left" class="bar-assertive">
+        <div class="buttons">
+            <button class="button">Left Button</button>
+        </div>
+        <h1 class="title">Title!</h1>
+        <div class="buttons" ng-click="doSomething()">
+            <button class="button">Right Button</button>
+        </div>
+    </ion-footer-bar>
+    <ion-content class="has-header">
+        <ion-slide-box on-slide-changed="slideHasChanged($index)">
+            <ion-slide>
+                <div class="box blue"></div>
+            </ion-slide>
+            <ion-slide>
+                <div class="box yellow"></div>
+            </ion-slide>
+            <ion-slide>
+                <div class="box pink"></div>
+            </ion-slide>
+        </ion-slide-box>
+        <h4>AAA</h4>
+    </ion-content>
+</ion-view>

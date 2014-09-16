@@ -1,0 +1,36 @@
+<ion-view title="{{category.name}}">
+    <ion-nav-buttons side="left">
+        <button menu-toggle="left" class="button button-icon icon ion-navicon"></button>
+    </ion-nav-buttons>
+    <ion-nav-buttons side="right">
+        <button class="button" ng-click="openLogin();">登录</button>
+    </ion-nav-buttons>
+    <ion-content class="has-header">
+        <ion-slide-box show-pager="true">
+            <ion-slide ng-repeat="ad in ads">
+                <a href="{{ad.url}}">
+                    <img ng-src="{{ad.img}}" width="100%" alt="{{ad.name}}"/>
+                </a>
+            </ion-slide>
+        </ion-slide-box>
+
+
+        <ion-list>
+            <ion-item class="item item-thumbnail-left" ng-repeat="item in items" href="#/app/item/{{item._id}}">
+                <img src="{{item.main_photo}}"
+                     alt="{{item.name}}"/>
+
+                <h2>
+                    {{item.name}}</h2>
+
+                <p>
+                    {{item.price}}</p>
+            </ion-item>
+        </ion-list>
+        <ion-infinite-scroll
+                ng-if="moreDataCanBeLoaded()"
+                icon="ion-loading-a"
+                on-infinite="loadMore()">
+        </ion-infinite-scroll>
+    </ion-content>
+</ion-view>
